@@ -61,6 +61,9 @@ public:
    *  Editor will use that.
    */
   virtual void save(lisp::Writer& writer);
+  virtual std::string get_class(){
+    return "game-object";
+  }
 
   /** returns true if the object is not scheduled to be removed yet */
   bool is_valid() const

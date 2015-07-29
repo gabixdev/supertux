@@ -149,6 +149,7 @@ Level::save(const std::string& filepath)
     writer.start_list("supertux-level");
     // Starts writing to supertux level file. Keep this at the very beginning.
 
+    writer.write("version",2);
     writer.write("name",name,true);
     writer.write("author",author,false);
     if (contact != ""){
@@ -166,7 +167,7 @@ Level::save(const std::string& filepath)
 
     for(auto i = sectors.begin(); i != sectors.end(); ++i) {
       Sector* sec = *i;
-      sec->save(writer); //wip
+      sec->save(writer);
     }
 
     // Ends writing to supertux level file. Keep this at the very end.
