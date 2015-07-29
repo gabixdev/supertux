@@ -73,4 +73,11 @@ GameObject::del_remove_listener(ObjectRemoveListener* listener)
   }
 }
 
+void
+GameObject::save(lisp::Writer& writer){
+  writer.start_list("game-object");
+  writer.write("name",name,false);
+  writer.end_list("game-object");
+}
+
 /* EOF */
