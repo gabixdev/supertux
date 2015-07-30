@@ -120,6 +120,7 @@ Camera::save(lisp::Writer& writer){
     case AUTOSCROLL:
       writer.write("mode", "autoscroll", false);
       autoscroll_path->save(writer);
+    case SCROLLTO: break;
     break;
   }
 }
