@@ -136,6 +136,7 @@ Background::save(lisp::Writer& writer) {
     case RIGHT_ALIGNMENT:  writer.write("alignment", "right",  false); break;
     case TOP_ALIGNMENT:    writer.write("alignment", "top",    false); break;
     case BOTTOM_ALIGNMENT: writer.write("alignment", "bottom", false); break;
+    case NO_ALIGNMENT: break;
   }
 
   writer.write("scroll-offset-x", scroll_offset.x);

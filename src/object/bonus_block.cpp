@@ -46,7 +46,8 @@ BonusBlock::BonusBlock(const Vector& pos, int data) :
   hit_counter(1),
   sprite_name(),
   script(),
-  lightsprite()
+  lightsprite(),
+  not_on_tilemap(false)
 {
   bbox.set_pos(pos);
   sprite->set_action("normal");
@@ -90,7 +91,8 @@ BonusBlock::BonusBlock(const Reader& lisp) :
   hit_counter(1),
   sprite_name(),
   script(),
-  lightsprite()
+  lightsprite(),
+  not_on_tilemap(false)
 {
   Vector pos;
 
@@ -191,6 +193,11 @@ BonusBlock::save(lisp::Writer& writer) {
   if (hit_counter > 1) {
     writer.write("count", hit_counter);
   }
+}
+
+bool
+BonusBlock::do_save() {
+  return not_on_tilemap;
 }
 
 void

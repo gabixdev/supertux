@@ -26,9 +26,10 @@ public:
 
   void try_break(Player* player);
   HitResponse collision(GameObject& other, const CollisionHit& hit);
-  virtual std::string get_class(){
-    return "brick";
+  virtual bool do_save() {
+    return false;
   }
+
 protected:
   virtual void hit(Player& player);
 

@@ -272,9 +272,11 @@ Sector::save(lisp::Writer &writer)
   // saving oběcts (not really)
   for(auto i = gameobjects.begin(); i != gameobjects.end(); ++i) {
     GameObjectPtr& obj = *i;
-    writer.start_list(obj->get_class());
-    obj->save(writer); //wip
-    writer.end_list(obj->get_class());
+    if (obj->do_save()) {
+      writer.start_list(obj->get_class());
+      obj->save(writer); //wip
+      writer.end_list(obj->get_class());
+    }
   }
 
   writer.end_list("sector");

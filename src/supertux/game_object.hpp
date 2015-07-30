@@ -64,6 +64,9 @@ public:
   virtual std::string get_class() {
     return "game-object";
   }
+  virtual bool do_save() {
+    return true;
+  }
 
   /** returns true if the object is not scheduled to be removed yet */
   bool is_valid() const
