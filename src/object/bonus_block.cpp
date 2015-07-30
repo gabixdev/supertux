@@ -44,11 +44,12 @@ BonusBlock::BonusBlock(const Vector& pos, int data) :
   contents(),
   object(),
   hit_counter(1),
+  not_on_tilemap(false),
   sprite_name(),
   script(),
-  lightsprite(),
-  not_on_tilemap(false)
+  lightsprite()
 {
+  not_on_tilemap = false;
   bbox.set_pos(pos);
   sprite->set_action("normal");
   switch(data) {
@@ -89,11 +90,12 @@ BonusBlock::BonusBlock(const Reader& lisp) :
   contents(),
   object(0),
   hit_counter(1),
+  not_on_tilemap(true),
   sprite_name(),
   script(),
-  lightsprite(),
-  not_on_tilemap(false)
+  lightsprite()
 {
+  not_on_tilemap = true;
   Vector pos;
 
   contents = CONTENT_COIN;
