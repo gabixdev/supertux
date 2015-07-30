@@ -114,11 +114,11 @@ public:
 void
 Camera::save(lisp::Writer& writer){
   GameObject::save(writer);
-  switch (mode){
-    case NORMAL: writer.write("mode","normal",false); break;
-    case MANUAL: writer.write("mode","manual",false); break;
+  switch (mode) {
+    case NORMAL: writer.write("mode", "normal", false); break;
+    case MANUAL: writer.write("mode", "manual", false); break;
     case AUTOSCROLL:
-      writer.write("mode","autoscroll",false);
+      writer.write("mode", "autoscroll", false);
       autoscroll_path->save(writer);
     break;
   }

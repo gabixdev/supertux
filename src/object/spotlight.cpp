@@ -53,11 +53,11 @@ Spotlight::~Spotlight()
 }
 
 void
-Spotlight::save(lisp::Writer& writer){
+Spotlight::save(lisp::Writer& writer) {
   GameObject::save(writer);
-  writer.write("x",position.x);
-  writer.write("y",position.y);
-  writer.write("color",color.toVector(false));
+  writer.write("x", position.x);
+  writer.write("y", position.y);
+  writer.write("color", color.toVector(false));
 }
 
 void

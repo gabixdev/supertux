@@ -193,15 +193,15 @@ BadGuy::update(float elapsed_time)
 }
 
 void
-BadGuy::save(lisp::Writer& writer){
+BadGuy::save(lisp::Writer& writer) {
   MovingSprite::save(writer);
   if(dir == LEFT){
-    writer.write("direction","left",false);
+    writer.write("direction", "left", false);
   }else{
-    writer.write("direction","right",false);
+    writer.write("direction", "right", false);
   }
   if(dead_script != ""){
-    writer.write("dead-script",dead_script,false);
+    writer.write("dead-script", dead_script, false);
   }
 }
 

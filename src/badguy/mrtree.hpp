@@ -25,7 +25,7 @@ public:
   MrTree(const Reader& reader);
 
   bool is_freezable() const;
-  virtual std::string get_class(){
+  virtual std::string get_class() {
     return "mrtree";
   }
 protected:

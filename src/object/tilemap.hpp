@@ -167,7 +167,7 @@ public:
    * Return tilemap's opacity. Note that while the tilemap is fading in or out, this will return the current alpha value, not the target alpha.
    */
   float get_alpha();
-  virtual std::string get_class(){
+  virtual std::string get_class() {
     return "tilemap";
   }
 private:

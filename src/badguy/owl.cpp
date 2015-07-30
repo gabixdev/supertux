@@ -48,9 +48,9 @@ Owl::Owl(const Vector& pos, Direction d) :
 }
 
 void
-Owl::save(lisp::Writer& writer){
+Owl::save(lisp::Writer& writer) {
   BadGuy::save(writer);
-  writer.write("carry",carried_obj_name);
+  writer.write("carry", carried_obj_name);
 }
 
 void

@@ -53,14 +53,14 @@ Wind::Wind(const Reader& reader) :
 }
 
 void
-Wind::save(lisp::Writer& writer){
+Wind::save(lisp::Writer& writer) {
   MovingObject::save(writer);
-  writer.write("width",bbox.get_width());
-  writer.write("height",bbox.get_height());
-  writer.write("speed-x",speed.x);
-  writer.write("speed-y",speed.y);
-  writer.write("acceleration",acceleration);
-  writer.write("blowing",blowing);
+  writer.write("width", bbox.get_width());
+  writer.write("height", bbox.get_height());
+  writer.write("speed-x", speed.x);
+  writer.write("speed-y", speed.y);
+  writer.write("acceleration", acceleration);
+  writer.write("blowing", blowing);
 }
 
 void

@@ -74,9 +74,9 @@ GameObject::del_remove_listener(ObjectRemoveListener* listener)
 }
 
 void
-GameObject::save(lisp::Writer& writer){
-  if(name != ""){
-    writer.write("name",name,false);
+GameObject::save(lisp::Writer& writer) {
+  if(name != "") {
+    writer.write("name", name, false);
   }
 }
 

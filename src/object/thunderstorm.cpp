@@ -56,10 +56,10 @@ Thunderstorm::Thunderstorm(const Reader& reader) :
 }
 
 void
-Thunderstorm::save(lisp::Writer& writer){
+Thunderstorm::save(lisp::Writer& writer) {
   GameObject::save(writer);
-  writer.write("running",running);
-  writer.write("interval",interval);
+  writer.write("running", running);
+  writer.write("interval", interval);
 }
 
 void

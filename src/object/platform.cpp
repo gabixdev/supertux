@@ -46,10 +46,10 @@ Platform::Platform(const Reader& reader) :
 }
 
 void
-Platform::save(lisp::Writer& writer){
+Platform::save(lisp::Writer& writer) {
   MovingSprite::save(writer);
-  if (!automatic){
-    writer.write("running",true);
+  if (!automatic) {
+    writer.write("running", true);
   }
   path->save(writer);
 }

@@ -46,7 +46,7 @@ public:
   /**
    * @}
    */
-  virtual std::string get_class(){
+  virtual std::string get_class() {
     return "candle";
   }
 private:

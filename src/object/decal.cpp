@@ -33,10 +33,10 @@ Decal::Decal(const Reader& reader) :
 }
 
 void
-Decal::save(lisp::Writer& writer){
+Decal::save(lisp::Writer& writer) {
   MovingSprite::save(writer);
-  writer.write("solid",group == COLGROUP_STATIC);
-  writer.write("action",default_action);
+  writer.write("solid", group == COLGROUP_STATIC);
+  writer.write("action", default_action);
 }
 
 Decal::~Decal()

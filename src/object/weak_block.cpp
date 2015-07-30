@@ -52,9 +52,9 @@ WeakBlock::WeakBlock(const Reader& lisp)
 }
 
 void
-WeakBlock::save(lisp::Writer& writer){
+WeakBlock::save(lisp::Writer& writer) {
   MovingSprite::save(writer);
-  writer.write("linked",linked);
+  writer.write("linked", linked);
 }
 
 HitResponse

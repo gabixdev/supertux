@@ -31,7 +31,7 @@ public:
 
   void ignite();
   bool is_flammable() const;
-  virtual std::string get_class(){
+  virtual std::string get_class() {
     return "iceflame";
   }
 private:

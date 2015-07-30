@@ -30,6 +30,9 @@ public:
   virtual void draw(DrawingContext& context);
   virtual void collision_solid(const CollisionHit& hit);
   virtual HitResponse collision(GameObject& other, const CollisionHit& hit);
+  virtual std::string get_class() {
+    return "powerup";
+  }
 
 private:
   Physic physic;

@@ -144,25 +144,25 @@ Level::load(const std::string& filepath)
 void
 Level::save(const std::string& filepath)
 {
-  try{
+  try {
     lisp::Writer writer(filepath);
     writer.start_list("supertux-level");
     // Starts writing to supertux level file. Keep this at the very beginning.
 
-    writer.write("version",2);
-    writer.write("name",name,true);
-    writer.write("author",author,false);
-    if (contact != ""){
-      writer.write("contact",contact,false);
+    writer.write("version", 2);
+    writer.write("name", name, true);
+    writer.write("author", author, false);
+    if (contact != "") {
+      writer.write("contact", contact, false);
     }
-    if (license != ""){
-      writer.write("license",license,false);
+    if (license != "") {
+      writer.write("license", license, false);
     }
-    if (on_menukey_script != ""){
-      writer.write("on-menukey-script",on_menukey_script,false);
+    if (on_menukey_script != "") {
+      writer.write("on-menukey-script", on_menukey_script, false);
     }
     if (target_time){
-      writer.write("target-time",target_time);
+      writer.write("target-time", target_time);
     }
 
     for(auto i = sectors.begin(); i != sectors.end(); ++i) {

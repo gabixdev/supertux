@@ -50,9 +50,9 @@ Lantern::Lantern(const Vector& pos) :
 }
 
 void
-Lantern::save(lisp::Writer& writer){
+Lantern::save(lisp::Writer& writer) {
   MovingSprite::save(writer);
-  writer.write("color",lightcolor.toVector(false));
+  writer.write("color", lightcolor.toVector(false));
 }
 
 Lantern::~Lantern()

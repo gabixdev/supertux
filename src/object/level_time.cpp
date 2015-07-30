@@ -44,9 +44,9 @@ LevelTime::LevelTime(const Reader& reader) :
 }
 
 void
-LevelTime::save(lisp::Writer& writer){
+LevelTime::save(lisp::Writer& writer) {
   GameObject::save(writer);
-  writer.write("time",time_left);
+  writer.write("time", time_left);
 }
 
 void

@@ -50,14 +50,14 @@ Ispy::Ispy(const Reader& reader) :
 }
 
 void
-Ispy::save(lisp::Writer& writer){
+Ispy::save(lisp::Writer& writer) {
   MovingSprite::save(writer);
-  switch (dir){
-    case LEFT:  writer.write("direction","left" ,false); break;
-    case RIGHT: writer.write("direction","right",false); break;
-    case DOWN:  writer.write("facing_down",true); break;
+  switch (dir) {
+    case LEFT:  writer.write("direction", "left" , false); break;
+    case RIGHT: writer.write("direction", "right", false); break;
+    case DOWN:  writer.write("facing_down", true); break;
   }
-  writer.write("script",script,false);
+  writer.write("script", script, false);
 }
 
 HitResponse

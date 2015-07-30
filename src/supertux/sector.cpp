@@ -250,17 +250,17 @@ Sector::parse(const Reader& sector)
 void
 Sector::save(lisp::Writer &writer)
 {
-  writer.start_list("sector",false);
+  writer.start_list("sector", false);
 
-  writer.write("name",name,false);
-  writer.write("gravity",gravity);
-  writer.write("ambient-light",ambient_light.toVector(false));
+  writer.write("name", name, false);
+  writer.write("gravity", gravity);
+  writer.write("ambient-light", ambient_light.toVector(false));
 
-  if (init_script != ""){
-    writer.write("init-script",init_script,false);
+  if (init_script != "") {
+    writer.write("init-script", init_script,false);
   }
-  if (music != ""){
-    writer.write("music",music,false);
+  if (music != "") {
+    writer.write("music", music, false);
   }
 
   // saving spawnpoints

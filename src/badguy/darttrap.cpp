@@ -47,11 +47,11 @@ DartTrap::DartTrap(const Reader& reader) :
 }
 
 void
-DartTrap::save(lisp::Writer& writer){
+DartTrap::save(lisp::Writer& writer) {
   BadGuy::save(writer);
-  writer.write("initial-delay",initial_delay);
-  writer.write("fire-delay",fire_delay);
-  writer.write("ammo",ammo);
+  writer.write("initial-delay", initial_delay);
+  writer.write("fire-delay", fire_delay);
+  writer.write("ammo", ammo);
 }
 
 void

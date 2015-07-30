@@ -129,30 +129,30 @@ Background::~Background()
 }
 
 void
-Background::save(lisp::Writer& writer){
+Background::save(lisp::Writer& writer) {
   GameObject::save(writer);
-  switch (alignment){
-    case LEFT_ALIGNMENT:   writer.write("alignment","left",  false); break;
-    case RIGHT_ALIGNMENT:  writer.write("alignment","right", false); break;
-    case TOP_ALIGNMENT:    writer.write("alignment","top",   false); break;
-    case BOTTOM_ALIGNMENT: writer.write("alignment","bottom",false); break;
+  switch (alignment) {
+    case LEFT_ALIGNMENT:   writer.write("alignment", "left",   false); break;
+    case RIGHT_ALIGNMENT:  writer.write("alignment", "right",  false); break;
+    case TOP_ALIGNMENT:    writer.write("alignment", "top",    false); break;
+    case BOTTOM_ALIGNMENT: writer.write("alignment", "bottom", false); break;
   }
 
-  writer.write("scroll-offset-x",scroll_offset.x);
-  writer.write("scroll-offset-y",scroll_offset.y);
-  writer.write("scroll-speed-x",scroll_speed.x);
-  writer.write("scroll-speed-y",scroll_speed.y);
-  writer.write("speed",speed);
+  writer.write("scroll-offset-x", scroll_offset.x);
+  writer.write("scroll-offset-y", scroll_offset.y);
+  writer.write("scroll-speed-x",  scroll_speed.x);
+  writer.write("scroll-speed-y",  scroll_speed.y);
+  writer.write("speed", speed);
   if (speed_y != speed){
-    writer.write("speed_y",speed_y);
+    writer.write("speed_y", speed_y);
   }
 
-  writer.write("image",imagefile,false);
-  if (imagefile_top != ""){
-    writer.write("image-top",imagefile_top);
+  writer.write("image", imagefile, false);
+  if (imagefile_top != "") {
+    writer.write("image-top", imagefile_top);
   }
-  if (imagefile_bottom != ""){
-    writer.write("image-bottom",imagefile_bottom);
+  if (imagefile_bottom != "") {
+    writer.write("image-bottom", imagefile_bottom);
   }
 }
 

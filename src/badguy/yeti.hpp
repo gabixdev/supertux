@@ -35,7 +35,7 @@ public:
   bool collision_squished(GameObject& object);
   void kill_squished(GameObject& object);
   void kill_fall();
-  virtual std::string get_class(){
+  virtual std::string get_class() {
     return "yeti";
   }
 private:

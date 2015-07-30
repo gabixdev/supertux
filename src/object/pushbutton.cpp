@@ -43,9 +43,9 @@ PushButton::PushButton(const Reader& lisp) :
 }
 
 void
-PushButton::save(lisp::Writer& writer){
+PushButton::save(lisp::Writer& writer) {
   MovingSprite::save(writer);
-  writer.write("script",script,false);
+  writer.write("script", script, false);
 }
 
 void

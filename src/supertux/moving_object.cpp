@@ -29,9 +29,9 @@ MovingObject::~MovingObject()
 }
 
 void
-MovingObject::save(lisp::Writer& writer){
+MovingObject::save(lisp::Writer& writer) {
   GameObject::save(writer);
-  writer.write("x",bbox.p1.x);
-  writer.write("y",bbox.p1.y);
+  writer.write("x", bbox.p1.x);
+  writer.write("y", bbox.p1.y);
 }
 /* EOF */
