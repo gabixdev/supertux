@@ -94,8 +94,10 @@ void Editor::reload_level() {
   }
   level->load(levelset + "/" + levelfile);
   currentsector = level->get_sector("main");
-  if(!currentsector)
-    throw std::runtime_error("Couldn't find main sector");
+  if(!currentsector) {
+    size_t i = 0;
+    currentsector = level->get_sector(i);
+  }
   currentsector->activate("main");
   currentsector->camera->mode = Camera::MANUAL;
 }
