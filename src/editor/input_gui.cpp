@@ -95,8 +95,8 @@ EditorInputGui::draw(DrawingContext& context) {
       if ((*tile_ID) == 0) {
         continue;
       }
-      const Tile* tile = Editor::current()->level->tileset->get(*tile_ID);
-      tile->draw(context, get_tile_coords(pos), LAYER_GUI-9);
+      const Tile* tg_tile = Editor::current()->level->tileset->get(*tile_ID);
+      tg_tile->draw(context, get_tile_coords(pos), LAYER_GUI-9);
     }
   }
 }
