@@ -34,7 +34,7 @@ class EditorInputGui
 
     void draw(DrawingContext&);
     void update(float elapsed_time);
-    void event(SDL_Event& event);
+    void event(SDL_Event& ev);
     void setup();
 
     int tile;

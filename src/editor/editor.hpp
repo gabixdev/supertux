@@ -45,7 +45,7 @@ class Editor : public Screen,
     virtual void setup() override;
     virtual void leave() override;
 
-    void event(SDL_Event& event);
+    void event(SDL_Event& ev);
 
     std::unique_ptr<Level> level;
     std::unique_ptr<World> world;

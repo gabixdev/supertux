@@ -159,6 +159,6 @@ Editor::setup() {
 }
 
 void
-Editor::event(SDL_Event& event) {
-  tileselect.event(event);
+Editor::event(SDL_Event& ev) {
+  tileselect.event(ev);
 }

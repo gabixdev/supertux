@@ -107,10 +107,10 @@ EditorInputGui::update(float elapsed_time) {
 }
 
 void
-EditorInputGui::event(SDL_Event& event) {
-  switch (event.type) {
+EditorInputGui::event(SDL_Event& ev) {
+  switch (ev.type) {
     case SDL_MOUSEBUTTONDOWN:
-    if(event.button.button == SDL_BUTTON_LEFT)
+    if(ev.button.button == SDL_BUTTON_LEFT)
     {
       switch (hovered_item) {
         case HI_TILEGROUP:
@@ -125,7 +125,7 @@ EditorInputGui::event(SDL_Event& event) {
 
     case SDL_MOUSEMOTION:
     {
-      Vector mouse_pos = VideoSystem::current()->get_renderer().to_logical(event.motion.x, event.motion.y);
+      Vector mouse_pos = VideoSystem::current()->get_renderer().to_logical(ev.motion.x, ev.motion.y);
       float x = mouse_pos.x - Xpos;
       float y = mouse_pos.y - Ypos;
       if (x < 0) {
