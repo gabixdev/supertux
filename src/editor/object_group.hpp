@@ -31,7 +31,7 @@ class ObjectGroup
     std::string name;
     std::vector<ObjectIcon> icons;
 
-    void add_icon(std::string object, std::string icon);
+    void add_icon(std::string object, std::string icon_path);
 };
 
 #endif // HEADER_SUPERTUX_EDITOR_OBJECT_GROUP_HPP

@@ -28,7 +28,7 @@ ObjectGroup::~ObjectGroup()
 }
 
 void
-ObjectGroup::add_icon(std::string name, std::string icon) {
-  ObjectIcon new_icon(name, icon);
+ObjectGroup::add_icon(std::string object, std::string icon_path) {
+  ObjectIcon new_icon(object, icon_path);
   icons.push_back(new_icon);
 }
