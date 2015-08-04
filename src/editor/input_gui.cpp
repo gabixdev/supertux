@@ -38,6 +38,7 @@
 
 EditorInputGui::EditorInputGui() :
   tile(0),
+  object(),
   input_type(IP_NONE),
   active_tilegroup(),
   active_objectgroup(-1),
