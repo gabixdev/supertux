@@ -32,6 +32,10 @@ class LayerIcon : public ObjectIcon
     virtual void draw(DrawingContext& context, Vector pos);
 
     int get_zpos();
+
+  private:
+    LayerIcon(const LayerIcon&);
+    LayerIcon& operator=(const LayerIcon&);
 };
 
 #endif // LAYER_ICON_HPP
