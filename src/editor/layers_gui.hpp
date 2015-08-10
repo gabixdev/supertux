@@ -43,6 +43,8 @@ class EditorLayersGui
     std::vector<std::unique_ptr<LayerIcon>> layers;
     void add_layer(GameObject* layer, std::string pic);
 
+    GameObject *selected_tilemap;
+
   private:
     int Ypos;
     const int Xpos = 32;
