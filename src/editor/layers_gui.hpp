@@ -63,6 +63,8 @@ class EditorLayersGui
     HoveredItem hovered_item;
     int hovered_layer;
 
+    EditorLayersGui(const EditorLayersGui&);
+    EditorLayersGui& operator=(const EditorLayersGui&);
 };
 
 #endif // HEADER_SUPERTUX_EDITOR_LAYERS_GUI_HPP
