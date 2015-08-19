@@ -64,6 +64,9 @@ class EditorInputCenter
 
     // in sector position
     Rectf drag_rect();
+
+    EditorInputCenter(const EditorInputCenter&);
+    EditorInputCenter& operator=(const EditorInputCenter&);
 };
 
 #endif // INPUT_CENTER_HPP
