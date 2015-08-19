@@ -36,7 +36,8 @@ EditorInputCenter::EditorInputCenter() :
   hovered_tile(0, 0),
   sector_pos(0, 0),
   mouse_pos(0, 0),
-  dragging(false)
+  dragging(false),
+  drag_start(0, 0)
 {
 }
 
