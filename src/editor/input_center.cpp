@@ -117,8 +117,8 @@ EditorInputCenter::fill() {
   // Passing recursively trough all tiles to be replaced...
   while (pos_stack.size()) {
 
-    if (pos_stack.size() > 1000) {
-      log_warning << "More than 1'000 tiles in stack to fill, STOP" << std::endl;
+    if (pos_stack.size() > 1000000) {
+      log_warning << "More than 1'000'000 tiles in stack to fill, STOP" << std::endl;
       return;
     }
 
