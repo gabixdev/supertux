@@ -30,6 +30,15 @@ class ObjectOption
     void* option;
 
     std::vector<std::string> select;
+
+    ObjectOption(const ObjectOption& blb) :
+      type(blb.type),
+      text(blb.text),
+      option(blb.option),
+      select(blb.select)
+    {    }
+
+    ObjectOption& operator=(const ObjectOption&);
 };
 
 #endif // HEADER_SUPERTUX_EDITOR_OBJECT_OPTION_HPP
