@@ -38,6 +38,7 @@ class ObjectOption
       select(blb.select)
     {    }
 
+  private:
     ObjectOption& operator=(const ObjectOption&);
 };
 
