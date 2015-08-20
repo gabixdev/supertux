@@ -38,8 +38,11 @@ class ObjectOption
       select(blb.select)
     {    }
 
-  private:
-    ObjectOption& operator=(const ObjectOption&);
+    ObjectOption& operator=(const ObjectOption& blb)
+    {
+      static ObjectOption result(blb);
+      return result;
+    }
 };
 
 #endif // HEADER_SUPERTUX_EDITOR_OBJECT_OPTION_HPP
