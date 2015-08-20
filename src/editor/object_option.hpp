@@ -36,12 +36,15 @@ class ObjectOption
       text(blb.text),
       option(blb.option),
       select(blb.select)
-    {    }
+    { /* blb-ost */ }
 
     ObjectOption& operator=(const ObjectOption& blb)
     {
-      static ObjectOption result(blb);
-      return result;
+      type = blb.type;
+      text = blb.text;
+      option = blb.option;
+      select = blb.select;
+      return *this;
     }
 };
 
