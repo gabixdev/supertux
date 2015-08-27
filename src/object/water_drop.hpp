@@ -1,6 +1,5 @@
 //  SuperTux
-//  Copyright (C) 2006 Matthias Braun <matze@braunis.de>
-//  Copyright (C) 2010 Florian Forster <supertux at octo.it>
+//  Copyright (C) 2015 Hume2 <teratux.mail@gmail.com>
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -15,25 +14,32 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifndef HEADER_SUPERTUX_BADGUY_SHORT_FUSE_HPP
-#define HEADER_SUPERTUX_BADGUY_SHORT_FUSE_HPP
+#ifndef HEADER_SUPERTUX_OBJECT_STAR_HPP
+#define HEADER_SUPERTUX_OBJECT_STAR_HPP
 
-#include "badguy/walking_badguy.hpp"
+#include "object/moving_sprite.hpp"
+#include "supertux/physic.hpp"
 
-class ShortFuse : public WalkingBadguy
+class WaterDrop : public MovingSprite
 {
 public:
-  ShortFuse(const Reader& reader);
+  WaterDrop(const Vector& pos);
 
-protected:
-  HitResponse collision_player (Player& player, const CollisionHit& hit);
-  HitResponse collision_bullet (Bullet& bullet, const CollisionHit& );
-  bool collision_squished (GameObject& object);
-  void kill_fall (void);
-  void ignite();
-  void explode (void);
+  virtual void update(float elapsed_time);
+  virtual void collision_solid(const CollisionHit& hit);
+  virtual HitResponse collision(GameObject& other, const CollisionHit& );
+
+private:
+  Physic physic;
+
+  typedef enum {
+    WDS_FALLING,
+    WDS_SPLASH
+  }WaterDropState;
+
+  WaterDropState wd_state;
 };
 
-#endif /* HEADER_SUPERTUX_BADGUY_SHORT_FUSE_HPP */
+#endif
 
 /* EOF */
