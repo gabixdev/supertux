@@ -31,6 +31,7 @@
 #include <sstream>
 
 static const float SQUISH_TIME = 2;
+static const float BURN_TIME = 1;
 
 static const float X_OFFSCREEN_DISTANCE = 1280;
 static const float Y_OFFSCREEN_DISTANCE = 800;
@@ -485,7 +486,7 @@ BadGuy::set_state(State state_)
   this->state = state_;
   switch(state_) {
     case STATE_BURNING:
-      state_timer.start(1);
+      state_timer.start(BURN_TIME);
       break;
     case STATE_SQUISHED:
       state_timer.start(SQUISH_TIME);
@@ -661,8 +662,6 @@ BadGuy::is_in_water() const
 void
 BadGuy::ignite()
 {
-  if (!is_active()) return;
-
   if ( is_freezable() ) {
 
     sprite->set_color(Color(0.40f, 0.40f, 0.40f));
