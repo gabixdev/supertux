@@ -576,7 +576,7 @@ BadGuy::might_fall(int height)
 Player*
 BadGuy::get_nearest_player()
 {
-  return Sector::current()->get_nearest_player (this->get_bbox ());
+  return Sector::current()->get_nearest_player(bbox);
 }
 
 void
