@@ -7,15 +7,13 @@
     (name "main")
     (music "music/chipdisko.ogg")
     (ambient-light 1 1 1)
-    (background
-      (speed 0.5)
-      (image-top "images/background/arctis_top.jpg")
-      (image "images/background/arctis.jpg")
-      (image-bottom "images/background/arctis_bottom.jpg")
-    )
     (camera
       (mode "normal")
       (backscrolling #f)
+    )
+    (gradient
+      (top_color 0 0.3137255 1)
+      (bottom_color 1 1 1)
     )
     (leveltime
       (time 500)

@@ -16,6 +16,10 @@
       (x 5114)
       (y 603)
     )
+    (gradient
+      (top_color 0 0.3137255 1)
+      (bottom_color 1 1 1)
+    )
     (leveltime
       (time 100)
     )
