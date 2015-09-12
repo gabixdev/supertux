@@ -33,6 +33,7 @@
 #include "supertux/menu/main_menu.hpp"
 #include "supertux/menu/options_menu.hpp"
 #include "supertux/menu/profile_menu.hpp"
+#include "supertux/menu/startgame_menu.hpp"
 #include "supertux/menu/worldmap_menu.hpp"
 #include "supertux/menu/worldmap_cheat_menu.hpp"
 
@@ -120,6 +121,9 @@ MenuStorage::create(MenuId menu_id)
 
     case EDITOR_SECTORS_MENU:
       return std::unique_ptr<Menu>(new EditorSectorsMenu);
+
+    case STARTGAME_MENU:
+      return std::unique_ptr<Menu>(new StartGameMenu);
 
     case NO_MENU:
       return std::unique_ptr<Menu>();
