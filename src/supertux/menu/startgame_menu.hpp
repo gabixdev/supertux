@@ -14,8 +14,8 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifndef HEADER_SUPERTUX_SUPERTUX_MENU_MAIN_MENU_HPP
-#define HEADER_SUPERTUX_SUPERTUX_MENU_MAIN_MENU_HPP
+#ifndef HEADER_SUPERTUX_SUPERTUX_MENU_STARTGAME_MENU_HPP
+#define HEADER_SUPERTUX_SUPERTUX_MENU_STARTGAME_MENU_HPP
 
 #include "gui/menu.hpp"
 
@@ -24,23 +24,23 @@ class ContribMenu;
 class World;
 
 enum MainMenuIDs {
-  MNID_STARTGAME,
-  MNID_LEVELS_CONTRIB,
-  MNID_ADDONS,
-  MNID_LEVELEDITOR,
+  MNID_SGSTARTGAME,
+  MNID_SGLEVELS_CONTRIB,
+  MNID_SGADDONS,
+  MNID_SGLEVELEDITOR,
 };
 
-class MainMenu : public Menu
+class StartGameMenu : public Menu
 {
 public:
-  MainMenu();
+  StartGameMenu();
 
   void on_window_resize() override;
   void menu_action(MenuItem* item) override;
 
 private:
-  MainMenu(const MainMenu&);
-  MainMenu& operator=(const MainMenu&);
+  StartGameMenu(const StartGameMenu&);
+  StartGameMenu& operator=(const StartGameMenu&);
 };
 
 #endif
