@@ -39,19 +39,22 @@ StartGameMenu::StartGameMenu()
   set_center_pos(SCREEN_WIDTH/2, SCREEN_HEIGHT/2 + 35);
 
   add_entry(MNID_STARTGAME, _("Start Game"));
+  add_hl();
   add_entry(MNID_LEVELS_CONTRIB, _("Contrib Levels"));
   add_entry(MNID_ADDONS, _("Add-ons"));
   add_entry(MNID_LEVELEDITOR, _("Level editor") + " (WIP)");
+  add_hl();
+  add_back(_("Back"));
 }
 
 void
-MainMenu::on_window_resize()
+StartGameMenu::on_window_resize()
 {
   set_center_pos(SCREEN_WIDTH/2, SCREEN_HEIGHT/2 + 35);
 }
 
 void
-MainMenu::menu_action(MenuItem* item)
+StartGameMenu::menu_action(MenuItem* item)
 {
   switch (item->id)
   {
@@ -72,12 +75,6 @@ MainMenu::menu_action(MenuItem* item)
       MenuManager::instance().push_menu(MenuStorage::ADDON_MENU);
       break;
 
-    case MNID_CREDITS:
-      MenuManager::instance().clear_menu_stack();
-      ScreenManager::current()->push_screen(std::unique_ptr<Screen>(new TextScroller("credits.txt")),
-                                            std::unique_ptr<ScreenFade>(new FadeOut(0.5)));
-      break;
-
     case MNID_LEVELEDITOR:
       {
         MenuManager::instance().clear_menu_stack();
@@ -86,29 +83,6 @@ MainMenu::menu_action(MenuItem* item)
         SoundManager::current()->stop_music(1);
         ScreenManager::current()->push_screen(move(screen),move(fade));
         //Editor::current()->setup();
-      }
-      break;
-
-    case MNID_QUITMAINMENU:
-      if (true)
-      {
-        // instantly exit the game
-        MenuManager::instance().clear_menu_stack();
-        ScreenManager::current()->quit(std::unique_ptr<ScreenFade>(new FadeOut(0.25)));
-        SoundManager::current()->stop_music(0.25);
-      }
-      else
-      {
-        // confirmation dialog
-        std::unique_ptr<Dialog> dialog(new Dialog);
-        dialog->set_text(_("Do you really want to quit SuperTux?"));
-        dialog->add_cancel_button(_("Cancel"));
-        dialog->add_default_button(_("Quit SuperTux"), [] {
-            MenuManager::instance().clear_menu_stack();
-            ScreenManager::current()->quit(std::unique_ptr<ScreenFade>(new FadeOut(0.25)));
-            SoundManager::current()->stop_music(0.25);
-          });
-        MenuManager::instance().set_dialog(std::move(dialog));
       }
       break;
   }
