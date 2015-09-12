@@ -40,7 +40,7 @@ MainMenu::MainMenu()
   set_center_pos(SCREEN_WIDTH/2, SCREEN_HEIGHT/2 + 35);
 
   //add_entry(MNID_STARTGAME, _("Start Game"));
-  add_submenu(_("Start Game"), MenuStorage::GAME_MENU);
+  add_submenu(_("Start Game"), MenuStorage::STARTGAME_MENU); // dont use GAME_MENU
   //add_entry(MNID_LEVELS_CONTRIB, _("Contrib Levels"));
   //add_entry(MNID_ADDONS, _("Add-ons"));
   add_submenu(_("Options"), MenuStorage::OPTIONS_MENU);
